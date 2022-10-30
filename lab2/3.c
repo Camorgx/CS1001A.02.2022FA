@@ -14,8 +14,8 @@ int main(void) {
     double S = sqrt(p * (p - a) * (p - b) * (p - c));
     printf("Area: %g\n", S);
     printf("Attributes: ");
-    if (a == b || b == c || c == a) {
-        if (a == b && b == c) {
+    if (equal(a, b) || equal(b, c) || equal(c, a)) {
+        if (equal(a, b) && equal(b, c)) {
             puts("equilateral");
             return 0;
         }

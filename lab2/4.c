@@ -3,7 +3,7 @@
 int main(void) {
     int totalCnt = 0;
     for (int i = 100; i <= 200; ++i) {
-        if (i % 3 && i % 5) {
+        if (i % 3 != 0 && i % 5) {
             printf("%d ", i);
             ++totalCnt;
             if (totalCnt % 8 == 0) {

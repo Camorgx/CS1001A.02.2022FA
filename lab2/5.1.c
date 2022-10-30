@@ -11,11 +11,10 @@ int main(void) {
                     ans[cnt++] = i * 100 + j * 10 + k;
                 }
             }
-        }
+        } 
     }
-    for (int i = 0; i < cnt - 1; ++i) {
-        printf("%d,", ans[i]);
+    for (int i = 0; i < cnt; ++i) {
+        printf("%d%s", ans[i], (i == cnt - 1) ? "" : ",");
     }
-    printf("%d\n", ans[cnt - 1]);
     return 0;
 }
