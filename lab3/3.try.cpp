@@ -29,7 +29,7 @@ int main() {
         std::printf(" %.0f\n", single_loop<double>(n));
         // max: 170
         std::cout << "Using long double: " << single_loop<long double>(n);
-        std::printf(" %.0f\n", single_loop<long double>(n));
+        std::printf(" %.0Lf\n", single_loop<long double>(n));
     }
     return 0;
 }

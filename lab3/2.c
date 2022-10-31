@@ -17,6 +17,8 @@ int get_integer(int low, int high) {
     return res;
 }
 
+int energe_walking, energe_off, energe_on, energe_bus;
+
 int get_energy(void) {
     puts("Choose a green behavior.");
     puts("1. Walking.");
@@ -29,21 +31,25 @@ int get_energy(void) {
         printf("Input how many steps you've walked today: ");
         int steps = get_integer(0, INT_MAX);
         step_energy = min(steps, 18000) * 256 / 18000;
+        energe_walking += step_energy;
     }
     else if (behavior == 2) {
         printf("Input how many offline payments you've made today: ");
         int times = get_integer(0, INT_MAX);
         step_energy = min(times, 10) * 5;
+        energe_off += step_energy;
     }
     else if (behavior == 3) {
         printf("Input how many train tickets you've purchased online this month: ");
         int times = get_integer(0, INT_MAX);
         step_energy = min(times, 10) * 136;
+        energe_on += step_energy;
     }
     else {
         printf("Input how many bus rides you've taken today: ");
         int times = get_integer(0, INT_MAX);
         step_energy = min(times, 5) * 80;
+        energe_bus += step_energy;
     }
     system("cls");
     printf("You get %dg green energy through the green behavior.\n", step_energy);
@@ -66,6 +72,10 @@ int main(void) {
         }
         else {
             printf("You have %dg green energy in total.\n", energy);
+            printf("You get %dg green energy through walking.\n", energe_walking);
+            printf("You get %dg green energy through offline payments.\n", energe_off);
+            printf("You get %dg green energy through online tickets.\n", energe_on);
+            printf("You get %dg green energy through buses.\n", energe_bus);
             break;
         }
     }

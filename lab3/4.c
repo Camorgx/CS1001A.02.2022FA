@@ -3,7 +3,7 @@
 
 int main() {
     char identifier[17];
-    scanf_s("%s", identifier, 16);
+    scanf("%s", identifier);
     if (!(isalpha(identifier[0]) || identifier[0] == '_')) {
         puts("Invalid identifier.");
         return 1;

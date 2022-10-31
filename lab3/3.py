@@ -12,4 +12,6 @@ while True:
         fact *= i
         sum += fact
     print(sum)
+    print("")
+    print("")
     print(float(sum))
