@@ -26,14 +26,17 @@ int get_words(FILE* fp, char s[][21], int cnt[], int max_cnt) {
     return i;
 }
 
+#define max_word_cnt 600
+#define max_word_length 20
+
 int main(void) {
     FILE* fp;
     if (fopen_s(&fp, "article.txt", "r")) {
         puts("Failed to open input file.");
         return 1;
     }
-    char words[1000][21];
-    int cnt[1000] = {0};
+    char words[max_word_cnt][max_word_length + 1];
+    int cnt[max_word_cnt] = {0};
     int dic_size = get_words(fp, words, cnt, 1000);
     fclose(fp);
     for (int i = 0; i < dic_size - 1 ; i++) {
