@@ -32,9 +32,9 @@ int main(void) {
         puts("Failed to open input file.");
         return 1;
     }
-    char words[100][21];
-    int cnt[100] = {0};
-    int dic_size = get_words(fp, words, cnt, 100);
+    char words[1000][21];
+    int cnt[1000] = {0};
+    int dic_size = get_words(fp, words, cnt, 1000);
     fclose(fp);
     for (int i = 0; i < dic_size - 1 ; i++) {
         int min = i;
@@ -56,5 +56,6 @@ int main(void) {
     }
     for (int i = 0; i < dic_size; ++i)
         fprintf(fp, "%s [%d]\n", words[i], cnt[i]);
+    fclose(fp);
     return 0;
 }
